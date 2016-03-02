@@ -1,0 +1,2 @@
+# osminimap
+OpenSim Minimap
