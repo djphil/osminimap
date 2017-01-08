@@ -1,0 +1,28 @@
+/* MiniMap CSS v0.1 (01/01/2016) */
+*{ padding:0px; margin:0px;}
+
+body {
+    background-color: #1D475F;
+    font-family: Verdana;
+    color: #FFF;
+}
+
+img {border: 0px;}
+.footer {font-size: 0.8em;}
+
+#tooltip {
+    position:absolute;
+    padding: 5px;
+    background-color: #FFF;
+    color: #222;
+    font-size: 0.8em;
+    visibility: hidden;
+    z-index: 100;
+    border: 1px solid #FFF;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: #FFF 0 0 1.0em;
+    -moz-box-shadow: #FFF 0 0 1.0em;
+    box-shadow: #FFF 0 0 1.0em;
+}

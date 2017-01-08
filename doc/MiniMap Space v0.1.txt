@@ -1,0 +1,41 @@
+// MiniMap Space v0.1 by djphil (CC-BY-NC-SA 4.0)
+
+string  url        = "http://YOUR_IP_OR_DNS/osminimap/";
+string  page       = "minimap.php?resolution=";
+integer CoordoXY   = 8000;
+integer height     = 1024;
+integer resolution = 32;
+float   tempo      = 3000.0;
+integer face       = 0;
+integer min;
+integer max;
+
+RefreshGraphic()
+{
+    osSetDynamicTextureURLBlendFace("", "image", url + page + (string)resolution, "width:1024, height:1024", TRUE, 2, 0, 255, face);   
+}
+
+default
+{
+    state_entry()
+    {
+        min = CoordoXY - (height / resolution / 2);
+        max = min + (height/resolution);
+        RefreshGraphic();
+        llSetTimerEvent(tempo);
+    }
+
+    touch_start( integer foo)
+    {
+        while (foo--)
+        {
+            if (llDetectedTouchFace(foo) != face) return;
+            vector v = llDetectedTouchST(foo);
+            integer x = (integer) llFloor((float) (max-min) * v.x ) + min;
+            integer y = (integer) llFloor((float) (max-min) * v.y ) + min + 1;
+            llRegionSayTo(llDetectedKey(foo), PUBLIC_CHANNEL, "You clicked region coordinates " + (string) x + "," + (string) y);
+        }
+    }
+    timer() {RefreshGraphic();}
+    changed( integer whatChanged ) {if (whatChanged & CHANGED_REGION_RESTART) llResetScript();}
+}

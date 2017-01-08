@@ -1,0 +1,12 @@
+
+osminimap:
+==========
+
+This OpenSim tools generate map to show free regions available on your grid.
+You can display this tools inworld with the MiniMap Space v0.1.txt LSL script.
+Just put the script in primtive and set the url.
+
+INSTALL:
+Go to inc/config.php and configure, that all.
+
+Enjoy!
