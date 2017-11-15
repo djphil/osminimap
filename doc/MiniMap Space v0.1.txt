@@ -1,7 +1,7 @@
 // MiniMap Space v0.1 by djphil (CC-BY-NC-SA 4.0)
 
 string  url        = "http://YOUR_IP_OR_DNS/osminimap/";
-string  page       = "minimap.php?resolution=";
+string  page       = "inc/minimap.php?resolution=";
 integer CoordoXY   = 8000;
 integer height     = 1024;
 integer resolution = 32;
